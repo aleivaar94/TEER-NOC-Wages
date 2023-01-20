@@ -87,7 +87,7 @@ else:
         col1.write("No teer category found for this NOC title")
 
 # Display plotly Choropleth map
-st.plotly_chart(fig)
+st.plotly_chart(fig, use_container_width=True)
 
 
 
