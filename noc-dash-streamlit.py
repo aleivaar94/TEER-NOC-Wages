@@ -2,11 +2,13 @@ import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 import json
+from PIL import Image
 
 
 st.markdown("<h1 style='text-align: center'>NOC Wage Finder</h1>", unsafe_allow_html=True)
-st.markdown("<h6 style='text-align: center'>Wages in Canadian dollar</h6>", unsafe_allow_html=True)
 
+
+# Read 
 merged = pd.read_csv('wage_noc_2016_2021.csv')
 
 merged['noc_2016'] = merged['noc_2016'].astype(str)
@@ -17,8 +19,27 @@ merged['noc_2021'] = merged['noc_2021'].astype('Int64')
 merged['noc_2021'] = merged['noc_2021'].astype(str)
 
 
+with st.sidebar:
+
+    st.title('About')
+    st.markdown("🍁 Canada's Job Bank provides wages for specific occupations at the provincial level. All jobs in Canada are associated with one specific occupational grouping determined by the National Occupational Classification (NOC). Wages are updated annually and come from various sources such as 2016 Census, Labour Force Survey and Employment Insurance Survey Data.")
+    st.markdown('Wages were last updated on 📅 November 2022. They are in Canadian dollars (💲CAD).')
+    
+    st.header('How to find my NOC Code and/or NOC Title?')
+    st.markdown('1. 💻 Go to [National Occupation Classification](https://noc.esdc.gc.ca/) Select the NOC Version and input your job title:')
+    image = Image.open("assets\select-noc.png")
+    st.image(image)
+
+    st.markdown('2. 👆 Select the unit group that matches your job title.')
+    image = Image.open("assets\select-unit-group.png")
+    st.image(image)
+
+    st.markdown('3. ✅ If there is more than one unit group, select the unit group that mostly resembles. Click on it and match *Example titles* and *Main duties* with your current job title.')
+    image = Image.open("assets\\verify-unit-group.png")
+    st.image(image)
+
 # Select NOC version
-noc_versions = ('2016', '2021')
+noc_versions = ('2021', '2016')
 selected_noc_version = st.selectbox('Select NOC version', noc_versions)
 
 # Find NOC Title
@@ -89,7 +110,11 @@ else:
 # Display plotly Choropleth map
 st.plotly_chart(fig, use_container_width=True)
 
+st.markdown('<sup>Wages in $CAD/hour. Median wage with *K* refers to annual wage in thousands</sup>', unsafe_allow_html=True)
 
+
+col1, col2, col3 = st.columns(3)
+col2.markdown('Made with ❤️ by [Alejandro](https://github.com/aleivaar94)')
 
 # # Output Dataframe of data selected
 
