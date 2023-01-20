@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import json
 from PIL import Image
-from pathlib import Path
+# from pathlib import Path
 
 st.markdown("<h1 style='text-align: center'>NOC Wage Finder</h1>", unsafe_allow_html=True)
 
@@ -27,15 +27,15 @@ with st.sidebar:
     
     st.header('How to find my NOC Code and/or NOC Title?')
     st.markdown('1. 💻 Go to [National Occupation Classification](https://noc.esdc.gc.ca/) Select the NOC Version and input your job title:')
-    image = Image.open(Path(__file__).parents[1] / 'assets/select-noc.png')
+    image = Image.open('select-noc.png')
     st.image(image)
 
     st.markdown('2. 👆 Select the unit group that matches your job title.')
-    image = Image.open(Path(__file__).parents[1] / 'assets/select-unit-group.png')
+    image = Image.open('select-unit-group.png')
     st.image(image)
 
     st.markdown('3. ✅ If there is more than one unit group, select the unit group that mostly resembles. Click on it and match *Example titles* and *Main duties* with your current job title.')
-    image = Image.open(Path(__file__).parents[1] / 'assets/verify-unit-group.png')
+    image = Image.open('verify-unit-group.png')
     st.image(image)
 
 # Select NOC version
