@@ -13,7 +13,8 @@ The objective of [Findmywage](https://findmywage.streamlit.app/) is to provide r
 
 
 ## Demo 
-<video src="https://github.com/aleivaar94/TEER-NOC-Wages/blob/master/assets/app-demo.MP4" controls></video>
+
+![](https://github.com/aleivaar94/TEER-NOC-Wages/blob/master/assets/app-demo-gif.gif)
 
 ## Requirements
 
@@ -63,11 +64,12 @@ There are discrepancies between the merged NOC titles of each version. It doesn'
 
 
 String matching outputs a numerical value, the closer the value to 1 means it's an identical match. A value at or above 0.5054 provides a match among NOC titles of the different NOC versions.
+<br>
 
 ![](https://github.com/aleivaar94/TEER-NOC-Wages/blob/master/assets/string-matching.png)
 
 
-Once the above discrepancies are addressed. The NOC codes from both the 2016 and 2021 versions are merged with the wages data obtained from the Government of Canada. This dataset is used to graph a Cloropleth Map using Plotly and develop the Streamlit app.
+Once the above discrepancies are addressed, the NOC codes from both the 2016 and 2021 versions are merged with the wages data obtained from the Government of Canada. This dataset is used to graph a Choropleth Map using Plotly and develop the Streamlit app.
 
 You can find the Streamlit app code in `noc-dash-streamlit.py`
 
@@ -82,7 +84,7 @@ TEER-NOC-Code-Analysis.ipynb
 Follow the jupyter notebooks in the order below:
 
 ```
-TEER-NOC-Code-Extraction.ipynb
+1. TEER-NOC-Code-Extraction.ipynb
 
-TEER-NOC-Code-Analysis.ipynb
+2. TEER-NOC-Code-Analysis.ipynb
 ```
