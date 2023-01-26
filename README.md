@@ -13,8 +13,7 @@ The objective of [Findmywage](https://findmywage.streamlit.app/) is to provide r
 
 
 ## Demo 
-![](https://github.com/aleivaar94/TEER-NOC-Wages/blob/master/assets/app-demo.MP4)
-
+<video src="https://github.com/aleivaar94/TEER-NOC-Wages/blob/master/assets/app-demo.MP4" controls></video>
 
 ## Requirements
 
